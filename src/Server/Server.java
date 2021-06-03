@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.*;
 
 public class Server {
@@ -48,7 +49,7 @@ public class Server {
                     new Thread(new MsgTask(this, SAVE_PATH, socket, in, out, username)).start();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                if (!(e instanceof SocketException)) e.printStackTrace();
             }
         }).start();
     }

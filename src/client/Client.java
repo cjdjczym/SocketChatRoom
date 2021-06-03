@@ -58,6 +58,7 @@ public class Client {
                         }
                         fos.close();
                         isFile = false;
+                        UI.showDialog("文件" + fileName + "接收成功");
                         continue;
                     }
                     String str = in.readLine();
@@ -73,7 +74,7 @@ public class Client {
             final String heartbeat = "[usage for heartbeat packet]";
             while (true) {
                 try {
-                    Thread.sleep(20 * 1000); // 每20s发送一次心跳
+                    Thread.sleep(15 * 1000); // 每15s发送一次心跳
                     out.write(heartbeat + "\r\n");
                     out.flush();
                     try {

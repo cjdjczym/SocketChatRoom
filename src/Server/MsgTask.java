@@ -40,13 +40,13 @@ public class MsgTask implements Runnable {
         new Thread(() -> {
             while (connected) {
                 try {
-                    Thread.sleep(25 * 1000);
-                    if (new Date().getTime() - timestamp > 25 * 1000) {
+                    Thread.sleep(20 * 1000);
+                    if (new Date().getTime() - timestamp > 20 * 1000) {
                         if (timeout == 2) disconnect();
                         else timeout++;
                     }
                 } catch (InterruptedException | IOException e) {
-                    e.printStackTrace();
+                    if (!(e instanceof SocketException)) e.printStackTrace();
                 }
             }
         }).start();
@@ -61,6 +61,7 @@ public class MsgTask implements Runnable {
                     long fileLen = dis.readLong();
                     File directory = new File(localPath);
                     File file = new File(directory.getAbsolutePath() + File.separatorChar + fileName);
+                    if (file.exists()) file.delete();
                     FileOutputStream fos = new FileOutputStream(file);
                     byte[] bytes = new byte[1024];
                     int length;
@@ -102,8 +103,8 @@ public class MsgTask implements Runnable {
                     }
                     fis.close();
                 } else if (HEARTBEAT.equals(str)) {
-                    System.out.println();
-                    System.out.println(username + " heartbeat");
+//                    System.out.println();
+//                    System.out.println(username + " heartbeat");
                     this.timeout = 0;
                 } else if (str != null) {
                     server.broadcast(username, str);

@@ -13,8 +13,8 @@ public class ClientUI implements ActionListener {
     private static final String PCM = "audio.pcm";
     private static final String WAV = "audio.wav";
 
-    //    private Client client;
-    private ClientV2 client;
+        private Client client;
+//    private ClientV2 client;
     private String username;
     private static final int MAX_MSG = 1024;
     private String[] msgList;
@@ -32,8 +32,8 @@ public class ClientUI implements ActionListener {
 
     public void createClient(String username, String ip, int port) {
         try {
-//            client = new Client(username, ip, port, this);
-            client = new ClientV2(username, ip, port, this);
+            client = new Client(username, ip, port, this);
+//            client = new ClientV2(username, ip, port, this);
             this.username = username;
             msgList = new String[MAX_MSG];
             index = 0;
