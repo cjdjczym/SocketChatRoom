@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ClientUI implements ActionListener {
-    public static String AUDIO_PATH = "C:\\Users\\cjdjczym\\Desktop\\";
+    public static String AUDIO_PATH = "C:\\Users\\cjdjczym\\Desktop";
     private static final String PCM = "audio.pcm";
     private static final String WAV = "audio.wav";
 

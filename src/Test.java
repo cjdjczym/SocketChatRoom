@@ -9,8 +9,8 @@ public class Test {
         // TODO: 设置服务器文件存储路径
         Server.SAVE_PATH = "D:\\IntelliJ IDEA\\SocketChatRoom\\src\\example";
 
-        // TODO: 设置本地音频存储路径(最后面记得加上文件分隔符)
-        ClientUI.AUDIO_PATH = "C:\\Users\\cjdjczym\\Desktop\\";
+        // TODO: 设置本地音频存储路径
+        ClientUI.AUDIO_PATH = "C:\\Users\\cjdjczym\\Desktop";
 
         System.out.println("------------使用说明------------");
         System.out.println("创建聊天室：create 聊天室名称 监听端口");
