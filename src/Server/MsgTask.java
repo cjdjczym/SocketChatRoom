@@ -103,8 +103,6 @@ public class MsgTask implements Runnable {
                     }
                     fis.close();
                 } else if (HEARTBEAT.equals(str)) {
-//                    System.out.println();
-//                    System.out.println(username + " heartbeat");
                     this.timeout = 0;
                 } else if (str != null) {
                     server.broadcast(username, str);

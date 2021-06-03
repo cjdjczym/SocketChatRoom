@@ -10,7 +10,7 @@ import java.net.SocketException;
 import java.util.*;
 
 public class Server {
-    private static final String SAVE_PATH = "D:\\IntelliJ IDEA\\SocketChatRoom\\src\\example";
+    public static String SAVE_PATH = "D:\\IntelliJ IDEA\\SocketChatRoom\\src\\example";
 
     public static final Map<String, Socket> sockets = new LinkedHashMap<>();
     public static final String ADMIN = "系统";

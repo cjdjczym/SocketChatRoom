@@ -9,12 +9,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class ClientUI implements ActionListener {
-    private static final String AUDIO_PATH = "C:/Users/cjdjczym/Desktop/";
+    public static String AUDIO_PATH = "C:\\Users\\cjdjczym\\Desktop\\";
     private static final String PCM = "audio.pcm";
     private static final String WAV = "audio.wav";
 
-        private Client client;
-//    private ClientV2 client;
+    public Client client;
+//        public ClientV2 client;
     private String username;
     private static final int MAX_MSG = 1024;
     private String[] msgList;
@@ -52,8 +52,11 @@ public class ClientUI implements ActionListener {
     }
 
     public void showMsg(String msg) {
-        this.msgList[index++] = msg;
-        jMsgList.setListData(msgList);
+        try{
+            this.msgList[index++] = msg;
+            jMsgList.setListData(msgList);
+        }
+        catch (Exception ignore){}
     }
 
     private JFrame getJFrame() {
