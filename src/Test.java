@@ -17,8 +17,8 @@ public class Test {
             e.printStackTrace();
         }
 
-//        ClientUI c2 = new ClientUI();
-//        c2.createClient("djdj", "127.0.0.1", 9090);
+        ClientUI c2 = new ClientUI();
+        c2.createClient("djdj", "127.0.0.1", 9090);
 
 //        Server.ChatRoom.close();
     }

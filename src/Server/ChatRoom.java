@@ -7,7 +7,8 @@ public class ChatRoom {
     public static String name;
     private static int localPort;
     public static List<String> msgList;
-    private static Server server;
+//    private static Server server;
+    private static ServerV2 server;
 
     // 创建聊天室
     public static void create(String name, int localPort) {
@@ -15,7 +16,8 @@ public class ChatRoom {
         ChatRoom.localPort = localPort;
         ChatRoom.msgList = new LinkedList<>();
         try {
-            server = new Server(localPort, name);
+//            server = new Server(localPort, name);
+            server = new ServerV2(localPort, name);
         } catch (IOException e) {
             e.printStackTrace();
         }
